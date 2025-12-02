@@ -101,6 +101,9 @@ public class PerfomanceComparison {
         list.clear();
         return System.nanoTime() - startTime;
     }
+    public int getOperationCount() {
+        return operationCount;
+    }
     public void comparePerfomance() {
         System.out.println("Сравнение производительности ArrayList и LinkedList");
         System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "Метод", "Количество операций",
