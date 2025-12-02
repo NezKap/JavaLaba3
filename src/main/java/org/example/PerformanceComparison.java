@@ -231,7 +231,7 @@ public class PerformanceComparison {
      * результатов в виде таблицы
      */
 
-    public void comparePerfomance() {
+    public void comparePerformance() {
         System.out.println("Сравнение производительности ArrayList и LinkedList");
         System.out.printf("| %-30s | %-19s | %-14s | %-15s |\n", "Метод", "Количество операций",
                 "ArrayList (мс)", "LinkedList (мс)");
