@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PerfomanceComparison {
-    private static int operationCount = 1000;
+    private int operationCount = 1000;
     private double testAddToTheBeginning(List<Integer> list) {
         long startTime = System.nanoTime();
         for (int i = 0; i < operationCount; i++) {
