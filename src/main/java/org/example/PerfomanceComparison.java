@@ -60,4 +60,16 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testRemoveInTheMiddle(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        for (int i = 0; i < operationCount / 10; i++) {
+            if (!list.isEmpty()) {
+                list.remove(list.size() / 2);
+            }
+        }
+        return System.nanoTime() - startTime;
+    }
 }
