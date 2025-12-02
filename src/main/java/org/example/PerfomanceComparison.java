@@ -101,4 +101,31 @@ public class PerfomanceComparison {
         list.clear();
         return System.nanoTime() - startTime;
     }
+    public void comparePerfomance() {
+        System.out.println("Сравнение производительности ArrayList и LinkedList");
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "Метод", "Количество операций",
+                "ArrayList (наносекунды)", "LinkedList (наносекунды");
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "add в начало", operationCount,
+                testAddToTheBeginning(arrayList), testAddToTheBeginning(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "add в конец", operationCount,
+                testAddToTheEnd(arrayList), testAddToTheEnd(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "add в середину", operationCount,
+                testAddInTheMiddle(arrayList), testAddInTheMiddle(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "get", operationCount, testGetElem(arrayList),
+                testGetElem(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "remove из начала", operationCount,
+                testRemoveAtTheBeginning(arrayList), testRemoveAtTheBeginning(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "remove из конца", operationCount,
+                testRemoveAtTheEnd(arrayList), testRemoveAtTheEnd(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "remove из середины", operationCount / 10,
+                testRemoveInTheMiddle(arrayList), testRemoveInTheMiddle(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "contains", operationCount,
+                testContains(arrayList), testContains(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "iteration", operationCount,
+                testIteration(arrayList), testIteration(linkedList));
+        System.out.printf("| %-30s | | %-15s | | %-15s | | %-30s |\n", "clear", operationCount,
+                testClear(arrayList), testClear(linkedList));
+    }
 }
