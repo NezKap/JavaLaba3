@@ -1,5 +1,16 @@
 package org.example;
 
-public class PerfomanceComparison {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
+public class PerfomanceComparison {
+    private static final int operationCount = 1000;
+    private long testAddToTheBeginning(List<Integer> list) {
+        long startTime = System.nanoTime();
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        return System.nanoTime() - startTime;
+    }
 }
