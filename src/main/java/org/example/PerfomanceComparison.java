@@ -72,4 +72,14 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testContains(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        for (int i = 0; i < operationCount; i++) {
+            list.contains(i);
+        }
+        return System.nanoTime() - startTime;
+    }
 }
