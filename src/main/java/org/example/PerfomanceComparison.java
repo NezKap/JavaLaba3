@@ -50,4 +50,14 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testRemoveAtTheEnd(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        for (int i = operationCount - 1; i >= 0; i--) {
+            list.remove(i);
+        }
+        return System.nanoTime() - startTime;
+    }
 }
