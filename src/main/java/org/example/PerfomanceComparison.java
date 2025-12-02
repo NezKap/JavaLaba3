@@ -30,4 +30,14 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testGetElem(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        for (int i = 0; i < operationCount; i++) {
+            list.get(i);
+        }
+        return System.nanoTime() - startTime;
+    }
 }
