@@ -93,4 +93,12 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testClear(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        list.clear();
+        return System.nanoTime() - startTime;
+    }
 }
