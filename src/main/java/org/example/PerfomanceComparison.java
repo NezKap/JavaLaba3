@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PerfomanceComparison {
-    private static final int operationCount = 1000;
+    private static int operationCount = 1000;
     private long testAddToTheBeginning(List<Integer> list) {
         long startTime = System.nanoTime();
         for (int i = 0; i < operationCount; i++) {
@@ -103,6 +103,9 @@ public class PerfomanceComparison {
     }
     public int getOperationCount() {
         return operationCount;
+    }
+    public void setOperationCount(int _operationCount) {
+        operationCount = _operationCount;
     }
     public void comparePerfomance() {
         System.out.println("Сравнение производительности ArrayList и LinkedList");
