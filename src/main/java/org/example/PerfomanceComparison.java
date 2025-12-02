@@ -82,4 +82,15 @@ public class PerfomanceComparison {
         }
         return System.nanoTime() - startTime;
     }
+    private long testIteration(List<Integer> list) {
+        for (int i = 0; i < operationCount; i++) {
+            list.add(i);
+        }
+        long startTime = System.nanoTime();
+        int sum = 0;
+        for (Integer elem : list) {
+            sum += elem;
+        }
+        return System.nanoTime() - startTime;
+    }
 }
