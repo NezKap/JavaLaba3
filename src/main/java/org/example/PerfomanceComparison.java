@@ -9,6 +9,13 @@ public class PerfomanceComparison {
     private long testAddToTheBeginning(List<Integer> list) {
         long startTime = System.nanoTime();
         for (int i = 0; i < operationCount; i++) {
+            list.add(0, i);
+        }
+        return System.nanoTime() - startTime;
+    }
+    private long testAddToTheEnd(List<Integer> list) {
+        long startTime = System.nanoTime();
+        for (int i = 0; i < operationCount; i++) {
             list.add(i);
         }
         return System.nanoTime() - startTime;
